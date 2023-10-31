@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+:root {
+  --primary-color: #4b4237; /* Dark Brown */
+  --hover-color: #4b3a37e8; /* Dark Brown */
+  --secondary-color: #264653; /* Dark Green */
+  --dark-color: #4b4237; /* Dark Brown */
+  --light-color: #f8f1e5; /* Light Beige */
+  --bg-color: #201f1c; /* Light Beige */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--light-color);
+  background: var(--bg-color);
+  font-family: 'Montserrat', sans-serif;
+  --webkit-font-smoothing: antialiased;
+}
+
+.shwocase {
+  width: 100%;
+  height: 60vh;
+}
+.shwocase .about {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.shwocase .about h1 {
+  font-size: 3rem;
+}
+
+.shwocase .about h4 {
+  margin-top: 10px;
+  color: rgb(16, 165, 115);
+  font-weight: 600;
+}
+
+.shwocase .about p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  padding: 0 40px;
+}
+
+.skills {
+  padding-top: 2rem;
+}
+
+.skills h1 {
+  font-size: 1.4rem;
+  padding: 10px 15px;
+}
+
+.skills-set {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 2px;
+}
+
+.skills-set .skill {
+  padding: 10px;
+  border: 1px solid var(--secondary-color);
+  color: var(--light-color);
+  border-radius: 5px;
+  cursor: default;
+}
+
+.skills-set .skill:hover {
+  border-color: green;
+}
+/*  */
+
+/* footer  */
+.footer {
+  padding: 0;
+  margin: 0;
+  background: var(--secondary-color);
+  text-align: center;
+  padding: 10px 0;
+  line-height: 3;
+}
+
+.links i {
+  font-size: 1.4rem;
+  padding: 0 4px;
+}
+
+.container {
+  line-height: 1.4;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--light-color);
+}
+
+#span-about {
+  color: #f38630;
+}
+
+@media (max-width: 700px) {
+  .shwocase {
+    height: auto;
+  }
+  .shwocase .about h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .shwocase .about h1 {
+    font-size: 2rem;
+  }
+
+  .shwocase .about h4 {
+    font-size: 1rem;
+  }
+  .shwocase .about p {
+    font-size: 1rem;
+  }
+
+  .skills {
+    padding-top: 0px;
+  }
+  .shwocase {
+    height: auto;
+  }
+  .shwocase .about p {
+    padding: 0 5px;
+  }
+  .skills h1 {
+    font-size: 1rem;
+  }
+}
