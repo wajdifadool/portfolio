@@ -285,7 +285,7 @@ section {
     /* display: inline-block; */
     position: relative;
     width: 100vw;
-    height: 40vh;
+    height: 60vh;
   }
   .hide-on-small {
     display: none;
