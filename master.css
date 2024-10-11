@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Globals  */
+:root {
+  --text-color: #f8f9fa;
+  --text-color-secondary: #dfe0e1;
+  --text-color-button: #00ffb7;
+  --background-color-button: #142b39;
+  --background-color-hover: rgba(209, 213, 218, 0.1);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+
+  background: linear-gradient(160deg, #081b36, #1a2f4a);
+  color: var(--text-color);
+  scroll-behavior: auto; /* Disable default CSS smooth scroll to avoid conflict with jQuery */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  line-height: 1.6; /* Improve readability */
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+ul {
+  list-style: none;
+}
+/* *
+ ======================= 
+=======================
+ ======================= */
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow-y: scroll;
+  justify-content: space-between;
+}
+
+/* ========================================= */
+/* ================SIDE BAR=================  */
+/* ========================================= */
+#sidebar {
+  position: fixed; /* Sticks it to the left */
+  width: 40vw; /* Define the width of the sidebar */
+  height: 100vh; /* Full viewport height */
+
+  padding: 20px;
+  overflow: hidden; /* Prevent the sidebar from scrolling */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#sidebar #main-content {
+  width: 100%;
+
+  margin-top: 10%;
+  padding: 0 5%;
+  display: inline-block;
+}
+
+#sidebar #main-content #main-content-inner {
+  width: 100%;
+
+  margin: auto;
+}
+
+#links {
+  margin: auto;
+  width: 100%;
+  padding: 0 5%;
+  display: flex;
+}
+#links li {
+  padding: 0 9px;
+  font-size: 1.2rem;
+}
+
+/* ========================================= 
+   ================Navigation=============== 
+   ========================================= */
+
+.main-nav {
+  margin-top: 100px;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-nav ul li {
+  padding: 5px 0;
+}
+
+/* ________ Nangiation Animation ________ */
+.main-nav ul li {
+  position: relative;
+}
+.list-item-text {
+  position: relative;
+  z-index: 2; /* Place text above the line */
+}
+.line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1.4px;
+
+  background-color: var(--text-color-secondary);
+  transition: width 0.3s ease; /* Smooth transition when expanding */
+  z-index: 1;
+}
+
+.main-nav ul li a:hover .line {
+  width: 7rem;
+}
+.main-nav ul li a:hover .list-item-text {
+  padding-left: 10px;
+  color: #fff;
+  transition: padding-left 0.3s ease;
+}
+
+/* Active state when clicked (preserve the line width) */
+.active .line {
+  width: 7rem; /* Line stays at full width when active */
+}
+
+.active .list-item-text {
+  padding-left: 10px; /* Push text to the right */
+}
+
+/* =========================== */
+/* =============Content area============== */
+/* =========================== */
+#content {
+  margin-left: 40vw; /* Ensures content doesn’t go under the sidebar */
+
+  width: calc(100% -40vw); /* Dynamic width */
+  padding-top: 10vh;
+  overflow-y: auto; /* Allows the right side to scroll */
+}
+
+section {
+  overflow-x: hidden;
+  padding-right: 5%;
+  /* padding-bottom: 120px; */
+}
+
+#about {
+  height: 90%;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  /* text-align: left; */
+  overflow-y: hidden;
+}
+
+/* Ensure the anchor behaves like a block */
+.project-box-link {
+  text-decoration: none;
+  color: inherit; /* Inherit text color */
+  display: block; /* Make it behave like a block element */
+}
+
+.project-box {
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+.project-box:hover {
+  background-color: var(--background-color-hover);
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.project-box:hover .project-title-icon {
+  color: #93d031;
+  margin-left: 10px;
+  display: block;
+}
+
+.project-title {
+  font-size: 1rem;
+  font-weight: 500;
+  padding-bottom: 10px;
+  display: flex;
+}
+
+.project-title-icon {
+  padding-left: 10px;
+  transition: all 0.3s ease; /* Smooth transition when expanding */
+}
+.project-description {
+  font-size: 0.8rem;
+  color: var(--text-color-secondary);
+  line-height: 2;
+}
+
+.project-tech {
+  display: flex;
+
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 15px 0;
+}
+.project-tech a {
+  font-size: 0.9rem;
+  padding: 0px 10px;
+  white-space: nowrap; /* Prevent the buttons from breaking into multiple lines */
+}
+
+.btn-tech {
+  background: rgba(88, 88, 124, 0.9);
+  display: inline-block;
+  /* Add the blur effect */
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
+  border-radius: 20px;
+  flex-shrink: 0; /* Prevents the buttons from shrinking too small */
+  color: var(--text-color-button);
+}
+/* html {
+  scroll-behavior: smooth; 
+} */
+
+/* Section Experince */
+/* Section Projects */
+
+/********************************************
+************** Utility classes ************** 
+*********************************************/
+
+.heading-large {
+  font-size: 3rem;
+  letter-spacing: -0.1em;
+  font-weight: 500;
+  /* display: inline; */
+}
+.leading-normal {
+  font-weight: 300;
+  font-size: 1.25rem;
+  padding-top: 5px;
+  text-transform: capitalize;
+}
+
+.leading-small {
+  font-weight: 200;
+  font-size: 1rem;
+  padding-top: 10px;
+  letter-spacing: 0.2em;
+  color: var(--text-color-secondary);
+}
+
+.text-md {
+  font-size: 1.1rem;
+  font-weight: 200;
+  line-height: 2;
+}
+
+.title-meduim-screens {
+  display: none;
+  width: 100%;
+  padding: 10px 0;
+}
+
+/* =================== */
+/* TABELS */
+/* =================== */
+@media (max-width: 840px) {
+  .container {
+    display: inline-block;
+  }
+
+  #sidebar {
+    /* display: inline-block; */
+    position: relative;
+    width: 100vw;
+    height: 40vh;
+  }
+  .hide-on-small {
+    display: none;
+  }
+
+  /* Content area */
+  #content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+  }
+  section {
+    margin: 20px 20px;
+    padding-right: 0px;
+  }
+  #about {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title-meduim-screens {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+/* =================== */
+/* Smart Phones */
+/* =================== */
+@media (max-width: 480px) {
+  .heading-large {
+    font-size: 2.4rem;
+  }
+  .leading-normal {
+    font-size: 1.15rem;
+  }
+
+  .leading-small {
+    font-size: 0.8rem;
+  }
+
+  .text-md {
+    font-size: 0.8rem;
+    line-height: 1.8;
+  }
+
+  .project-title {
+    font-size: 0.9rem;
+    font-weight: 200;
+    padding-bottom: 10px;
+    display: flex;
+  }
+
+  .project-description {
+    font-size: 0.7rem;
+    line-height: 1.8;
+  }
+
+  section {
+    margin: 0;
+    margin-bottom: 120px;
+    padding: 0;
+    height: auto;
+  }
+  #links {
+    padding: 20px;
+  }
+  #content {
+    padding: 20px 0;
+  }
+  #sidebar {
+    height: auto;
+  }
+
+  .project-box {
+    padding: 0;
+    margin: 10px 0;
+  }
+
+  .project-tech {
+    gap: 10px;
+  }
+
+  .project-tech a {
+    font-size: 0.7rem;
+    padding: 0px 5px;
+    white-space: nowrap; /* Prevent the buttons from breaking into multiple lines */
+  }
+
+  .show-on-meduim {
+    display: inline-block;
+  }
+
+  /* Content area */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* For better  */
+.section-footer {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
