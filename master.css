@@ -154,6 +154,8 @@ section {
   overflow-x: hidden;
   padding-right: 5%;
   /* padding-bottom: 120px; */
+  position: relative;
+  padding-top: 50px;
 }
 
 #about {
@@ -210,12 +212,13 @@ section {
   display: flex;
 
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 5px;
+  row-gap: 12px;
   padding: 15px 0;
 }
 .project-tech a {
   font-size: 0.9rem;
-  padding: 0px 10px;
+  padding: 3px 12px;
   white-space: nowrap; /* Prevent the buttons from breaking into multiple lines */
 }
 
@@ -271,12 +274,21 @@ section {
   display: none;
   width: 100%;
   padding: 10px 0;
+  position: sticky;
 }
 
 /* =================== */
 /* TABELS */
 /* =================== */
-@media (max-width: 840px) {
+
+@media (max-width: 1000px) {
+  .text-md {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 900px) {
   .container {
     display: inline-block;
   }
@@ -307,9 +319,13 @@ section {
   }
 
   .title-meduim-screens {
-    display: inline-block;
+    display: inline;
     width: 100%;
     padding: 10px 0;
+  }
+  .text-md {
+    font-size: 1rem;
+    line-height: 1.8;
   }
 }
 
